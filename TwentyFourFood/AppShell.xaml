@@ -7,9 +7,15 @@
     xmlns:strings="clr-namespace:TwentyFourFood.Resources.Strings"
     Title="TwentyFourFood">
 
-    <ShellContent
-        Title="{x:Static strings:AppResources.HomeTitle}"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="{x:Static strings:AppResources.IngredientsTitle}"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="{x:Static strings:AppResources.NewIngredientTitle}"
+            ContentTemplate="{DataTemplate local:CreateIngredientPage}"
+            Route="CreateIngredientPage" />
+    </TabBar>
 
 </Shell>

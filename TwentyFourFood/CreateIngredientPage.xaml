@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:TwentyFourFood.Resources.Strings"
+             x:Class="TwentyFourFood.CreateIngredientPage"
+             Title="{x:Static strings:AppResources.NewIngredientTitle}"
+             BackgroundColor="{StaticResource BulmaBackground}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+            <Label Text="{x:Static strings:AppResources.NewIngredientTitle}" Style="{StaticResource PageTitle}" />
+            <Label Text="{x:Static strings:AppResources.IngredientsSubtitle}" Style="{StaticResource PageSubtitle}" />
+
+            <Border Style="{StaticResource BulmaBox}">
+                <VerticalStackLayout Spacing="12">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="{x:Static strings:AppResources.NameLabel}" Style="{StaticResource FieldLabel}" />
+                        <Border Style="{StaticResource BulmaInputBorder}">
+                            <Entry Text="{Binding Name}"
+                                   Placeholder="{x:Static strings:AppResources.NamePlaceholder}"
+                                   Style="{StaticResource BulmaEntry}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="{x:Static strings:AppResources.CategoryLabel}" Style="{StaticResource FieldLabel}" />
+                        <Border Style="{StaticResource BulmaInputBorder}">
+                            <Entry Text="{Binding Category}"
+                                   Placeholder="{x:Static strings:AppResources.CategoryPlaceholder}"
+                                   Style="{StaticResource BulmaEntry}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <VerticalStackLayout Grid.Column="0" Spacing="6">
+                            <Label Text="{x:Static strings:AppResources.QuantityLabel}" Style="{StaticResource FieldLabel}" />
+                            <Border Style="{StaticResource BulmaInputBorder}">
+                                <Entry Text="{Binding QuantityText}"
+                                       Placeholder="{x:Static strings:AppResources.QuantityPlaceholder}"
+                                       Keyboard="Numeric"
+                                       Style="{StaticResource BulmaEntry}" />
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="6">
+                            <Label Text="{x:Static strings:AppResources.UnitLabel}" Style="{StaticResource FieldLabel}" />
+                            <Border Style="{StaticResource BulmaInputBorder}">
+                                <Entry Text="{Binding Unit}"
+                                       Placeholder="{x:Static strings:AppResources.UnitPlaceholder}"
+                                       Style="{StaticResource BulmaEntry}" />
+                            </Border>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="{x:Static strings:AppResources.NotesLabel}" Style="{StaticResource FieldLabel}" />
+                        <Border Style="{StaticResource BulmaInputBorder}">
+                            <Editor Text="{Binding Notes}"
+                                    Placeholder="{x:Static strings:AppResources.NotesPlaceholder}"
+                                    AutoSize="TextChanges"
+                                    Style="{StaticResource BulmaEditor}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Button Text="{x:Static strings:AppResources.AddIngredientButton}"
+                            Command="{Binding AddIngredientCommand}"
+                            Style="{StaticResource PrimaryButton}" />
+
+                    <Label Text="{Binding StatusMessage}" Style="{StaticResource StatusText}">
+                        <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding StatusMessage}" Value="">
+                                <Setter Property="IsVisible" Value="False" />
+                            </DataTrigger>
+                        </Label.Triggers>
+                    </Label>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

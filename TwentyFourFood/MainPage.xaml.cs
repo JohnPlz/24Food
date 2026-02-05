@@ -1,15 +1,13 @@
-﻿using TwentyFourFood.Services;
-using TwentyFourFood.ViewModels;
+﻿using TwentyFourFood.ViewModels;
 
 namespace TwentyFourFood
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(MainViewModel viewModel)
         {
             InitializeComponent();
-
-            BindingContext = new MainViewModel(new LiteDbService());
+            BindingContext = viewModel;
         }
     }
 }
