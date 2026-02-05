@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Globalization;
 using LiteDB;
 using TwentyFourFood.Resources.Strings;
@@ -16,6 +17,8 @@ public class Recipe
     public int Servings { get; set; }
 
     public string Notes { get; set; } = string.Empty;
+
+    public List<RecipeIngredient> Ingredients { get; set; } = new();
 
     public DateTimeOffset CreatedAt { get; set; }
 

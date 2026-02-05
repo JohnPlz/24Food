@@ -32,6 +32,21 @@
   <data name="NewRecipeTitle" xml:space="preserve">
     <value>Neues Rezept</value>
   </data>
+  <data name="RecipeIngredientsTitle" xml:space="preserve">
+    <value>Zutaten</value>
+  </data>
+  <data name="IngredientSelectLabel" xml:space="preserve">
+    <value>Zutat auswählen</value>
+  </data>
+  <data name="IngredientSelectPlaceholder" xml:space="preserve">
+    <value>Vorhandene Zutat wählen</value>
+  </data>
+  <data name="IngredientNameLabel" xml:space="preserve">
+    <value>Zutatenname</value>
+  </data>
+  <data name="IngredientNamePlaceholder" xml:space="preserve">
+    <value>oder neue Zutat eingeben</value>
+  </data>
   <data name="NameLabel" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -80,6 +95,9 @@
   <data name="AddIngredientButton" xml:space="preserve">
     <value>Zutat hinzufügen</value>
   </data>
+  <data name="AddRecipeIngredientButton" xml:space="preserve">
+    <value>Zutat zum Rezept hinzufügen</value>
+  </data>
   <data name="AddRecipeButton" xml:space="preserve">
     <value>Rezept hinzufügen</value>
   </data>
@@ -98,6 +116,12 @@
   <data name="EmptyRecipesSubtitle" xml:space="preserve">
     <value>Fügen Sie Ihr erstes Rezept hinzu, um es hier zu sehen.</value>
   </data>
+  <data name="RecipeIngredientsEmptyTitle" xml:space="preserve">
+    <value>Noch keine Zutaten hinzugefügt.</value>
+  </data>
+  <data name="RecipeIngredientsEmptySubtitle" xml:space="preserve">
+    <value>Fügen Sie Zutaten hinzu, um das Rezept zu erstellen.</value>
+  </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Start</value>
   </data>
@@ -112,6 +136,9 @@
   </data>
   <data name="StatusRecipeNameRequired" xml:space="preserve">
     <value>Name ist erforderlich.</value>
+  </data>
+  <data name="StatusIngredientNameRequired" xml:space="preserve">
+    <value>Zutatenname ist erforderlich.</value>
   </data>
   <data name="StatusServingsNumber" xml:space="preserve">
     <value>Die Portionenanzahl muss eine Zahl sein.</value>

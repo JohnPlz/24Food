@@ -41,6 +41,83 @@
                         </Border>
                     </VerticalStackLayout>
 
+                    <Label Text="{x:Static strings:AppResources.RecipeIngredientsTitle}" Style="{StaticResource SectionTitle}" />
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="{x:Static strings:AppResources.IngredientSelectLabel}" Style="{StaticResource FieldLabel}" />
+                        <Picker ItemsSource="{Binding AvailableIngredients}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding SelectedIngredient}"
+                                Title="{x:Static strings:AppResources.IngredientSelectPlaceholder}" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="{x:Static strings:AppResources.IngredientNameLabel}" Style="{StaticResource FieldLabel}" />
+                        <Border Style="{StaticResource BulmaInputBorder}">
+                            <Entry Text="{Binding IngredientName}"
+                                   Placeholder="{x:Static strings:AppResources.IngredientNamePlaceholder}"
+                                   Style="{StaticResource BulmaEntry}" />
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                        <VerticalStackLayout Grid.Column="0" Spacing="6">
+                            <Label Text="{x:Static strings:AppResources.QuantityLabel}" Style="{StaticResource FieldLabel}" />
+                            <Border Style="{StaticResource BulmaInputBorder}">
+                                <Entry Text="{Binding IngredientQuantityText}"
+                                       Placeholder="{x:Static strings:AppResources.QuantityPlaceholder}"
+                                       Keyboard="Numeric"
+                                       Style="{StaticResource BulmaEntry}" />
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" Spacing="6">
+                            <Label Text="{x:Static strings:AppResources.UnitLabel}" Style="{StaticResource FieldLabel}" />
+                            <Border Style="{StaticResource BulmaInputBorder}">
+                                <Entry Text="{Binding IngredientUnit}"
+                                       Placeholder="{x:Static strings:AppResources.UnitPlaceholder}"
+                                       Style="{StaticResource BulmaEntry}" />
+                            </Border>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Button Text="{x:Static strings:AppResources.AddRecipeIngredientButton}"
+                            Command="{Binding AddRecipeIngredientCommand}"
+                            Style="{StaticResource PrimaryButton}" />
+
+                    <CollectionView x:Name="RecipeIngredientsCollection"
+                                    ItemsSource="{Binding RecipeIngredients}"
+                                    SelectionMode="None">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="8" />
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{StaticResource BulmaCard}">
+                                    <VerticalStackLayout Spacing="6">
+                                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                            <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
+                                            <Button Text="{x:Static strings:AppResources.DeleteButton}"
+                                                    Command="{Binding BindingContext.RemoveRecipeIngredientCommand, Source={x:Reference RecipeIngredientsCollection}}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource DeleteButton}" />
+                                        </Grid>
+
+                                        <Label Text="{Binding QuantityDisplay}" Style="{StaticResource MetaText}" IsVisible="{Binding HasQuantity}" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                        <CollectionView.EmptyView>
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="{x:Static strings:AppResources.RecipeIngredientsEmptyTitle}" Style="{StaticResource CardTitle}" />
+                                <Label Text="{x:Static strings:AppResources.RecipeIngredientsEmptySubtitle}" Style="{StaticResource MetaText}" />
+                            </VerticalStackLayout>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+
                     <VerticalStackLayout Spacing="6">
                         <Label Text="{x:Static strings:AppResources.NotesLabel}" Style="{StaticResource FieldLabel}" />
                         <Border Style="{StaticResource BulmaInputBorder}">

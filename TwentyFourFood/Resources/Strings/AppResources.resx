@@ -32,6 +32,21 @@
   <data name="NewRecipeTitle" xml:space="preserve">
     <value>New Recipe</value>
   </data>
+  <data name="RecipeIngredientsTitle" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="IngredientSelectLabel" xml:space="preserve">
+    <value>Select ingredient</value>
+  </data>
+  <data name="IngredientSelectPlaceholder" xml:space="preserve">
+    <value>Choose an existing ingredient</value>
+  </data>
+  <data name="IngredientNameLabel" xml:space="preserve">
+    <value>Ingredient name</value>
+  </data>
+  <data name="IngredientNamePlaceholder" xml:space="preserve">
+    <value>or enter a new ingredient</value>
+  </data>
   <data name="NameLabel" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -80,6 +95,9 @@
   <data name="AddIngredientButton" xml:space="preserve">
     <value>Add Ingredient</value>
   </data>
+  <data name="AddRecipeIngredientButton" xml:space="preserve">
+    <value>Add ingredient to recipe</value>
+  </data>
   <data name="AddRecipeButton" xml:space="preserve">
     <value>Add Recipe</value>
   </data>
@@ -98,6 +116,12 @@
   <data name="EmptyRecipesSubtitle" xml:space="preserve">
     <value>Add your first recipe to see it here.</value>
   </data>
+  <data name="RecipeIngredientsEmptyTitle" xml:space="preserve">
+    <value>No ingredients added yet.</value>
+  </data>
+  <data name="RecipeIngredientsEmptySubtitle" xml:space="preserve">
+    <value>Add ingredients to build the recipe.</value>
+  </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Home</value>
   </data>
@@ -112,6 +136,9 @@
   </data>
   <data name="StatusRecipeNameRequired" xml:space="preserve">
     <value>Name is required.</value>
+  </data>
+  <data name="StatusIngredientNameRequired" xml:space="preserve">
+    <value>Ingredient name is required.</value>
   </data>
   <data name="StatusServingsNumber" xml:space="preserve">
     <value>Servings must be a number.</value>
