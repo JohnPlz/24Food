@@ -16,6 +16,14 @@
             Title="{x:Static strings:AppResources.NewIngredientTitle}"
             ContentTemplate="{DataTemplate local:CreateIngredientPage}"
             Route="CreateIngredientPage" />
+        <ShellContent
+            Title="{x:Static strings:AppResources.RecipesTitle}"
+            ContentTemplate="{DataTemplate local:RecipesPage}"
+            Route="RecipesPage" />
+        <ShellContent
+            Title="{x:Static strings:AppResources.NewRecipeTitle}"
+            ContentTemplate="{DataTemplate local:CreateRecipePage}"
+            Route="CreateRecipePage" />
     </TabBar>
 
 </Shell>

@@ -19,8 +19,11 @@ namespace TwentyFourFood
 
             builder.Services.AddSingleton<LiteDbService>();
             builder.Services.AddSingleton<MainViewModel>();
+            builder.Services.AddSingleton<RecipesViewModel>();
             builder.Services.AddTransient<MainPage>();
             builder.Services.AddTransient<CreateIngredientPage>();
+            builder.Services.AddTransient<RecipesPage>();
+            builder.Services.AddTransient<CreateRecipePage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

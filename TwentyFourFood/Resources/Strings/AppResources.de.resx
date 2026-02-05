@@ -23,17 +23,32 @@
   <data name="NewIngredientTitle" xml:space="preserve">
     <value>Neue Zutat</value>
   </data>
+  <data name="RecipesTitle" xml:space="preserve">
+    <value>Rezepte</value>
+  </data>
+  <data name="RecipesSubtitle" xml:space="preserve">
+    <value>Rezepte anlegen und lokal speichern.</value>
+  </data>
+  <data name="NewRecipeTitle" xml:space="preserve">
+    <value>Neues Rezept</value>
+  </data>
   <data name="NameLabel" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="NamePlaceholder" xml:space="preserve">
     <value>z. B. Roma-Tomate</value>
   </data>
+  <data name="RecipeNamePlaceholder" xml:space="preserve">
+    <value>z. B. Spaghetti Bolognese</value>
+  </data>
   <data name="CategoryLabel" xml:space="preserve">
     <value>Kategorie</value>
   </data>
   <data name="CategoryPlaceholder" xml:space="preserve">
     <value>Obst, Milchprodukte, Vorrat</value>
+  </data>
+  <data name="RecipeCategoryPlaceholder" xml:space="preserve">
+    <value>Abendessen, Dessert</value>
   </data>
   <data name="QuantityLabel" xml:space="preserve">
     <value>Menge</value>
@@ -47,14 +62,26 @@
   <data name="UnitPlaceholder" xml:space="preserve">
     <value>kg, Stk., TL</value>
   </data>
+  <data name="ServingsLabel" xml:space="preserve">
+    <value>Portionen</value>
+  </data>
+  <data name="ServingsPlaceholder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="NotesLabel" xml:space="preserve">
     <value>Notizen</value>
   </data>
   <data name="NotesPlaceholder" xml:space="preserve">
     <value>Optionale Details</value>
   </data>
+  <data name="RecipeNotesPlaceholder" xml:space="preserve">
+    <value>Optionale Zubereitungsnotizen</value>
+  </data>
   <data name="AddIngredientButton" xml:space="preserve">
     <value>Zutat hinzufügen</value>
+  </data>
+  <data name="AddRecipeButton" xml:space="preserve">
+    <value>Rezept hinzufügen</value>
   </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Löschen</value>
@@ -64,6 +91,12 @@
   </data>
   <data name="EmptySubtitle" xml:space="preserve">
     <value>Fügen Sie Ihre erste Zutat hinzu, um sie hier zu sehen.</value>
+  </data>
+  <data name="EmptyRecipesTitle" xml:space="preserve">
+    <value>Noch keine Rezepte.</value>
+  </data>
+  <data name="EmptyRecipesSubtitle" xml:space="preserve">
+    <value>Fügen Sie Ihr erstes Rezept hinzu, um es hier zu sehen.</value>
   </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>Start</value>
@@ -76,5 +109,17 @@
   </data>
   <data name="StatusIngredientSaved" xml:space="preserve">
     <value>Zutat gespeichert.</value>
+  </data>
+  <data name="StatusRecipeNameRequired" xml:space="preserve">
+    <value>Name ist erforderlich.</value>
+  </data>
+  <data name="StatusServingsNumber" xml:space="preserve">
+    <value>Die Portionenanzahl muss eine Zahl sein.</value>
+  </data>
+  <data name="StatusRecipeSaved" xml:space="preserve">
+    <value>Rezept gespeichert.</value>
+  </data>
+  <data name="ServingsTagFormat" xml:space="preserve">
+    <value>Portionen: {0}</value>
   </data>
 </root>

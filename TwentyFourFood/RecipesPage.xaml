@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:TwentyFourFood.Resources.Strings"
+             x:Class="TwentyFourFood.RecipesPage"
+             Title="{x:Static strings:AppResources.RecipesTitle}"
+             BackgroundColor="{StaticResource BulmaBackground}">
+
+    <Grid Padding="24" RowDefinitions="Auto,*" RowSpacing="16">
+        <VerticalStackLayout Grid.Row="0" Spacing="6">
+            <Label Text="{x:Static strings:AppResources.RecipesTitle}" Style="{StaticResource PageTitle}" />
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1"
+                        x:Name="RecipesCollection"
+                        ItemsSource="{Binding Recipes}"
+                        SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="12" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource BulmaCard}">
+                        <VerticalStackLayout Spacing="8">
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                                <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
+                                <Button Text="{x:Static strings:AppResources.DeleteButton}"
+                                        Command="{Binding BindingContext.DeleteRecipeCommand, Source={x:Reference RecipesCollection}}"
+                                        CommandParameter="{Binding .}"
+                                        Style="{StaticResource DeleteButton}" />
+                            </Grid>
+
+                            <HorizontalStackLayout Spacing="8">
+                                <Border Style="{StaticResource TagBorder}" IsVisible="{Binding HasCategory}">
+                                    <Label Text="{Binding Category}" Style="{StaticResource TagText}" />
+                                </Border>
+                                <Border Style="{StaticResource TagBorder}" IsVisible="{Binding HasServings}">
+                                    <Label Text="{Binding ServingsDisplay}" Style="{StaticResource TagText}" />
+                                </Border>
+                            </HorizontalStackLayout>
+
+                            <Label Text="{Binding Notes}" Style="{StaticResource CardNotes}" IsVisible="{Binding HasNotes}" />
+                            <Label Text="{Binding CreatedAtDisplay}" Style="{StaticResource MetaText}" />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="{x:Static strings:AppResources.EmptyRecipesTitle}" Style="{StaticResource CardTitle}" />
+                    <Label Text="{x:Static strings:AppResources.EmptyRecipesSubtitle}" Style="{StaticResource MetaText}" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </Grid>
+</ContentPage>

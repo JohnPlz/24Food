@@ -51,4 +51,32 @@ public class LiteDbService
 
         collection.Delete(id);
     }
+
+    public List<Recipe> GetRecipes()
+    {
+        using var db = OpenDatabase();
+        var collection = db.GetCollection<Recipe>("recipes");
+
+        return collection.Query()
+            .OrderByDescending(x => x.CreatedAt)
+            .ToList();
+    }
+
+    public Recipe AddRecipe(Recipe recipe)
+    {
+        using var db = OpenDatabase();
+        var collection = db.GetCollection<Recipe>("recipes");
+
+        collection.Insert(recipe);
+
+        return recipe;
+    }
+
+    public void DeleteRecipe(int id)
+    {
+        using var db = OpenDatabase();
+        var collection = db.GetCollection<Recipe>("recipes");
+
+        collection.Delete(id);
+    }
 }
