@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using TwentyFourFood.Models;
+using TwentyFourFood.Resources.Strings;
 using TwentyFourFood.Services;
 
 namespace TwentyFourFood.ViewModels;
@@ -87,7 +88,7 @@ public class MainViewModel : INotifyPropertyChanged
 
         if (string.IsNullOrWhiteSpace(Name))
         {
-            StatusMessage = "Name is required.";
+            StatusMessage = AppResources.StatusNameRequired;
             return;
         }
 
@@ -96,7 +97,7 @@ public class MainViewModel : INotifyPropertyChanged
         {
             if (!double.TryParse(QuantityText, NumberStyles.Float, CultureInfo.CurrentCulture, out quantityValue))
             {
-                StatusMessage = "Quantity must be a number.";
+                StatusMessage = AppResources.StatusQuantityNumber;
                 return;
             }
         }
@@ -120,7 +121,7 @@ public class MainViewModel : INotifyPropertyChanged
         Unit = string.Empty;
         Notes = string.Empty;
 
-        StatusMessage = "Ingredient saved.";
+        StatusMessage = AppResources.StatusIngredientSaved;
     }
 
     private void DeleteIngredient(Ingredient? ingredient)

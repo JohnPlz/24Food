@@ -1,3 +1,4 @@
+using System.Globalization;
 using LiteDB;
 
 namespace TwentyFourFood.Models;
@@ -27,5 +28,5 @@ public class Ingredient
 
     public string QuantityDisplay => HasQuantity ? $"{Quantity:0.##} {Unit}".Trim() : string.Empty;
 
-    public string CreatedAtDisplay => CreatedAt.ToLocalTime().ToString("MMM d, yyyy h:mm tt");
+    public string CreatedAtDisplay => CreatedAt.ToLocalTime().ToString("g", CultureInfo.CurrentCulture);
 }

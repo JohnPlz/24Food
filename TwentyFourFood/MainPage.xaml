@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:strings="clr-namespace:TwentyFourFood.Resources.Strings"
              x:Class="TwentyFourFood.MainPage"
-             Title="Ingredients"
+             Title="{x:Static strings:AppResources.IngredientsTitle}"
              BackgroundColor="{StaticResource BulmaBackground}">
 
     <CollectionView x:Name="IngredientsCollection"
@@ -14,63 +15,63 @@
 
         <CollectionView.Header>
             <VerticalStackLayout Padding="24" Spacing="16">
-                <Label Text="Ingredients" Style="{StaticResource PageTitle}" />
-                <Label Text="Create ingredients and store them locally with LiteDB." Style="{StaticResource PageSubtitle}" />
+                <Label Text="{x:Static strings:AppResources.IngredientsTitle}" Style="{StaticResource PageTitle}" />
+                <Label Text="{x:Static strings:AppResources.IngredientsSubtitle}" Style="{StaticResource PageSubtitle}" />
 
                 <Border Style="{StaticResource BulmaBox}">
                     <VerticalStackLayout Spacing="12">
-                        <Label Text="New Ingredient" Style="{StaticResource SectionTitle}" />
+                        <Label Text="{x:Static strings:AppResources.NewIngredientTitle}" Style="{StaticResource SectionTitle}" />
 
                         <VerticalStackLayout Spacing="6">
-                            <Label Text="Name" Style="{StaticResource FieldLabel}" />
+                            <Label Text="{x:Static strings:AppResources.NameLabel}" Style="{StaticResource FieldLabel}" />
                             <Border Style="{StaticResource BulmaInputBorder}">
                                 <Entry Text="{Binding Name}"
-                                       Placeholder="e.g. Roma tomato"
+                                       Placeholder="{x:Static strings:AppResources.NamePlaceholder}"
                                        Style="{StaticResource BulmaEntry}" />
                             </Border>
                         </VerticalStackLayout>
 
                         <VerticalStackLayout Spacing="6">
-                            <Label Text="Category" Style="{StaticResource FieldLabel}" />
+                            <Label Text="{x:Static strings:AppResources.CategoryLabel}" Style="{StaticResource FieldLabel}" />
                             <Border Style="{StaticResource BulmaInputBorder}">
                                 <Entry Text="{Binding Category}"
-                                       Placeholder="Produce, Dairy, Pantry"
+                                       Placeholder="{x:Static strings:AppResources.CategoryPlaceholder}"
                                        Style="{StaticResource BulmaEntry}" />
                             </Border>
                         </VerticalStackLayout>
 
                         <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
                             <VerticalStackLayout Grid.Column="0" Spacing="6">
-                                <Label Text="Quantity" Style="{StaticResource FieldLabel}" />
+                                <Label Text="{x:Static strings:AppResources.QuantityLabel}" Style="{StaticResource FieldLabel}" />
                                 <Border Style="{StaticResource BulmaInputBorder}">
                                     <Entry Text="{Binding QuantityText}"
-                                           Placeholder="2.5"
+                                           Placeholder="{x:Static strings:AppResources.QuantityPlaceholder}"
                                            Keyboard="Numeric"
                                            Style="{StaticResource BulmaEntry}" />
                                 </Border>
                             </VerticalStackLayout>
 
                             <VerticalStackLayout Grid.Column="1" Spacing="6">
-                                <Label Text="Unit" Style="{StaticResource FieldLabel}" />
+                                <Label Text="{x:Static strings:AppResources.UnitLabel}" Style="{StaticResource FieldLabel}" />
                                 <Border Style="{StaticResource BulmaInputBorder}">
                                     <Entry Text="{Binding Unit}"
-                                           Placeholder="kg, pcs, tsp"
+                                           Placeholder="{x:Static strings:AppResources.UnitPlaceholder}"
                                            Style="{StaticResource BulmaEntry}" />
                                 </Border>
                             </VerticalStackLayout>
                         </Grid>
 
                         <VerticalStackLayout Spacing="6">
-                            <Label Text="Notes" Style="{StaticResource FieldLabel}" />
+                            <Label Text="{x:Static strings:AppResources.NotesLabel}" Style="{StaticResource FieldLabel}" />
                             <Border Style="{StaticResource BulmaInputBorder}">
                                 <Editor Text="{Binding Notes}"
-                                        Placeholder="Optional details"
+                                        Placeholder="{x:Static strings:AppResources.NotesPlaceholder}"
                                         AutoSize="TextChanges"
                                         Style="{StaticResource BulmaEditor}" />
                             </Border>
                         </VerticalStackLayout>
 
-                        <Button Text="Add Ingredient"
+                        <Button Text="{x:Static strings:AppResources.AddIngredientButton}"
                                 Command="{Binding AddIngredientCommand}"
                                 Style="{StaticResource PrimaryButton}" />
 
@@ -92,7 +93,7 @@
                     <VerticalStackLayout Spacing="8">
                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
                             <Label Text="{Binding Name}" Style="{StaticResource CardTitle}" />
-                            <Button Text="Delete"
+                                <Button Text="{x:Static strings:AppResources.DeleteButton}"
                                     Command="{Binding BindingContext.DeleteIngredientCommand, Source={x:Reference IngredientsCollection}}"
                                     CommandParameter="{Binding .}"
                                     Style="{StaticResource DeleteButton}" />
@@ -116,8 +117,8 @@
 
         <CollectionView.EmptyView>
             <VerticalStackLayout Padding="24" Spacing="6">
-                <Label Text="No ingredients yet." Style="{StaticResource CardTitle}" />
-                <Label Text="Add your first ingredient to see it here." Style="{StaticResource MetaText}" />
+                <Label Text="{x:Static strings:AppResources.EmptyTitle}" Style="{StaticResource CardTitle}" />
+                <Label Text="{x:Static strings:AppResources.EmptySubtitle}" Style="{StaticResource MetaText}" />
             </VerticalStackLayout>
         </CollectionView.EmptyView>
     </CollectionView>
